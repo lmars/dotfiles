@@ -1,0 +1,16 @@
+[user]
+  name = Lewis Marshall
+  email = lewismarshall86@gmail.com
+[alias]
+  co = checkout
+  c  = commit -v
+  s  = status
+  l  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  d  = diff
+  dc = diff --cached
+  a  = add
+[core]
+  excludesfile = ~/.gitignore
+  editor = gvim -f -c 'startinsert'
+[color]
+  ui = true
