@@ -5,7 +5,7 @@
   co = checkout
   c  = commit -v
   s  = status
-  l  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  l  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --all --abbrev-commit --date=relative
   d  = diff
   dc = diff --cached
   a  = add
