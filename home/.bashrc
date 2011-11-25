@@ -10,6 +10,11 @@ shopt -s checkwinsize # check the window size after each command
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+# enable bash completion in interactive shells
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
+
 # set 2-line color prompt (with git branch if possible)
 if type __git_ps1 >/dev/null 2>&1; then
   PS1='\n\[\033[01;35m\]\t \[\033[00m\]\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;33m\]$(__git_ps1 " (%s)")\[\033[00m\]\n\[\033[01;32m\]\u\[\033[00m\]:-> '
