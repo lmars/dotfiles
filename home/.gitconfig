@@ -4,11 +4,13 @@
 [alias]
   co = checkout
   c  = commit -v
+  ca = commit -v --amend
   s  = status
   l  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --all --abbrev-commit --date=relative
   d  = diff
   dc = diff --cached
   a  = add
+  ap = add --patch
 [core]
   excludesfile = ~/.gitignore
   editor = gvim -f -c 'startinsert'
