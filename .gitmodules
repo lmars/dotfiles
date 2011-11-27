@@ -1,3 +1,30 @@
-[submodule "vim-config"]
-	path = vim-config
-	url = git://github.com/lmars/vim-config
+[submodule "home/.vim/bundle/command-t"]
+	path = home/.vim/bundle/command-t
+	url = git://github.com/wincent/Command-T.git
+[submodule "home/.vim/bundle/vim-ruby"]
+	path = home/.vim/bundle/vim-ruby
+	url = git://github.com/vim-ruby/vim-ruby.git
+[submodule "home/.vim/bundle/sweet-rspec-vim"]
+	path = home/.vim/bundle/sweet-rspec-vim
+	url = git://github.com/duskhacker/sweet-rspec-vim.git
+[submodule "home/.vim/bundle/ack.vim"]
+	path = home/.vim/bundle/ack.vim
+	url = git://github.com/mileszs/ack.vim.git
+[submodule "home/.vim/bundle/checksyntax_vim"]
+	path = home/.vim/bundle/checksyntax_vim
+	url = git://github.com/tomtom/checksyntax_vim.git
+[submodule "home/.vim/bundle/vim-rails"]
+	path = home/.vim/bundle/vim-rails
+	url = git://github.com/tpope/vim-rails.git
+[submodule "home/.vim/bundle/tabular"]
+	path = home/.vim/bundle/tabular
+	url = git://github.com/godlygeek/tabular.git
+[submodule "home/.vim/bundle/vim-puppet"]
+	path = home/.vim/bundle/vim-puppet
+	url = git://github.com/rodjek/vim-puppet.git
+[submodule "home/.vim/bundle/vim-fugitive"]
+	path = home/.vim/bundle/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "home/.vim/bundle/hammer.vim"]
+	path = home/.vim/bundle/hammer.vim
+	url = git://github.com/robgleeson/hammer.vim.git
