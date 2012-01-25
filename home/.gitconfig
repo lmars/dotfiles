@@ -6,6 +6,7 @@
   c      = commit -v
   ca     = commit -v --amend
   s      = status
+  sw     = show
   l      = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(yellow)%an%Creset' --all --abbrev-commit --date=relative
   d      = diff
   dc     = diff --cached
