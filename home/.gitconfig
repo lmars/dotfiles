@@ -26,3 +26,5 @@
 	icon = /Users/lewis/Pictures/github.png
 [github]
   user = lmars
+[init]
+  templatedir = ~/.git_template

@@ -1,0 +1,11 @@
+#!/bin/bash
+# Dont allow commits containing the addition of '@wip'
+
+if test "$(git diff --cached | grep '+@wip')"
+then
+  echo "Error: Attempt to commit an @wip line"
+  echo
+  echo "To skip this check, add the --no-verify option"
+  echo
+  exit 1
+fi
