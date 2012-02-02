@@ -1,7 +1,7 @@
 #!/bin/bash
 # Dont allow commits containing the addition of '@wip'
 
-if test "$(git diff --cached | grep '+@wip')"
+if test "$(git diff --cached | grep -P '\+\s*@wip')"
 then
   echo "Error: Attempt to commit an @wip line"
   echo
