@@ -1,0 +1,18 @@
+HISTCONTROL=ignoredups:ignorespace # don't put duplicate lines in the history
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+shopt -s histappend # append to the history file, don't overwrite it
+
+shopt -s checkwinsize # check the window size after each command
+
+# set 2-line color prompt (with git branch if possible)
+if type __git_ps1 >/dev/null 2>&1; then
+  PS1='\n\[\033[01;35m\]\t \[\033[00m\]\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;33m\]$(__git_ps1 " (%s)")\[\033[00m\]\n\[\033[01;32m\]\u\[\033[00m\]:-> '
+else
+  PS1='\n\[\033[01;35m\]\t \[\033[00m\]\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\[\033[01;32m\]\u\[\033[00m\]:-> '
+fi
+
+if [ -d "$HOME/bin" ]; then
+  PATH="$HOME/bin:$PATH"
+fi
