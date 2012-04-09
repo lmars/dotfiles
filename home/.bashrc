@@ -1,13 +1,9 @@
 source ~/.bash/aliases
+source ~/.bash/completion
 source ~/.bash/env
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-# enable bash completion in interactive shells
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
 
 # enable color support of ls & grep
 if [ -x /usr/bin/dircolors ]; then
