@@ -29,3 +29,5 @@
   user = lmars
 [init]
   templatedir = ~/.git_template
+[merge]
+  conflictstyle = diff3
