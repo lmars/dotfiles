@@ -28,6 +28,3 @@ fi
 if [ -f ~/.bash_custom ]; then
     . ~/.bash_custom
 fi
-
-# Load RVM into a shell session *as a function* if it's installed
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
