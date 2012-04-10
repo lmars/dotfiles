@@ -9,3 +9,6 @@ else
   alias ls='ls -G'
   alias la='ls -oah'
 fi
+
+# make grep decide when to use color
+alias grep='grep --color=auto'
