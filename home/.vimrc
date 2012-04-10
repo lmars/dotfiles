@@ -40,6 +40,8 @@ map <silent> <leader>a :b#<CR>
 " set lines=40 with <leader>l
 map <silent> <leader>l :set lines=40<CR>
 
+map <CR> o<ESC>
+
 let g:ackhighlight=1
 
 " make the checksyntax plugin automatically check ruby syntax after save
