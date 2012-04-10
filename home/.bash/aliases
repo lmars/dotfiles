@@ -1,1 +1,11 @@
-alias la='ls -lahG'
+# Make ls use color, display in long format, show dotfiles,
+# use filesize units and omit group ids
+if `ls --version >/dev/null 2>&1`; then
+  # GNU coreutils version
+  alias ls='ls --color=auto'
+  alias la='ls -lahG'
+else
+  # BSD version
+  alias ls='ls -G'
+  alias la='ls -oah'
+fi
