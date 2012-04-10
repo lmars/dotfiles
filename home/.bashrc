@@ -2,7 +2,7 @@ source ~/.bash/aliases
 source ~/.bash/completion
 source ~/.bash/env
 
-# Custom script
-if [ -f ~/.bash_custom ]; then
-    . ~/.bash_custom
+# Machine specific script
+if [ -f ~/.bash/local ]; then
+    source ~/.bash/local
 fi
