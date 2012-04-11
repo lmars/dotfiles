@@ -4,6 +4,9 @@
 [alias]
   a   = add
   ap  = add --patch
+  b   = branch
+  bd  = branch -d
+  bdd = branch -D
   c   = commit -v
   ca  = commit -v --amend
   co  = checkout
