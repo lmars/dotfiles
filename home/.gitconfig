@@ -2,23 +2,23 @@
   name = Lewis Marshall
   email = lewis.marshall@econsultancy.com
 [alias]
-  co     = checkout
-  c      = commit -v
-  ca     = commit -v --amend
-  s      = status
-  sw     = show
-  l      = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(yellow)%an%Creset' --all --abbrev-commit --date=relative
-  d      = diff
-  dc     = diff --cached
-  a      = add
-  ap     = add --patch
-  fx     = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
-  sq     = !sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -
-  ri     = rebase --interactive --autosquash
-  rc     = rebase --continue
-  ra     = rebase --abort
-  rs     = rebase --skip
-  sh     = !git-sh
+  co  = checkout
+  c   = commit -v
+  ca  = commit -v --amend
+  s   = status
+  sw  = show
+  l   = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(yellow)%an%Creset' --all --abbrev-commit --date=relative
+  d   = diff
+  dc  = diff --cached
+  a   = add
+  ap  = add --patch
+  fx  = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+  sq  = !sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+  ri  = rebase --interactive --autosquash
+  rc  = rebase --continue
+  ra  = rebase --abort
+  rs  = rebase --skip
+  sh  = !git-sh
 [core]
   excludesfile = ~/.gitignore
   editor = gvim -f -c 'startinsert'
