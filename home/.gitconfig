@@ -31,3 +31,5 @@
   templatedir = ~/.git_template
 [merge]
   conflictstyle = diff3
+[color "sh"]
+  branch = yellow bold

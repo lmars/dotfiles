@@ -1,0 +1,1 @@
+export PS1='\n\[\e[01;33m\](\[\e[00m\]`_git_headname`\[\e[01;33m\])\[\e[00m\] `_git_repo_state``_git_workdir` \[\e[01;31m\]git\[\e[00m\]: '
