@@ -12,8 +12,8 @@
   dc     = diff --cached
   a      = add
   ap     = add --patch
-  fixup  = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
-  squash = !sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+  fx     = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+  sq     = !sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -
   ri     = rebase --interactive --autosquash
   rc     = rebase --continue
   ra     = rebase --abort
