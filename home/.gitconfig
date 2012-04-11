@@ -14,6 +14,7 @@
   g   = grep -n
   hrd = reset --hard
   l   = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(yellow)%an%Creset' --all --abbrev-commit --date=relative
+  r   = rebase
   ra  = rebase --abort
   rc  = rebase --continue
   ri  = rebase --interactive --autosquash
