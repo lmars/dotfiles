@@ -11,6 +11,7 @@
   dc  = diff --cached
   f   = fetch
   fx  = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+  g   = grep -n
   l   = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(yellow)%an%Creset' --all --abbrev-commit --date=relative
   ra  = rebase --abort
   rc  = rebase --continue
