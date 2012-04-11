@@ -2,23 +2,23 @@
   name = Lewis Marshall
   email = lewis.marshall@econsultancy.com
 [alias]
-  co  = checkout
-  c   = commit -v
-  ca  = commit -v --amend
-  s   = status
-  sw  = show
-  l   = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(yellow)%an%Creset' --all --abbrev-commit --date=relative
-  d   = diff
-  dc  = diff --cached
   a   = add
   ap  = add --patch
+  c   = commit -v
+  ca  = commit -v --amend
+  co  = checkout
+  d   = diff
+  dc  = diff --cached
   fx  = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
-  sq  = !sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -
-  ri  = rebase --interactive --autosquash
-  rc  = rebase --continue
+  l   = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(yellow)%an%Creset' --all --abbrev-commit --date=relative
   ra  = rebase --abort
+  rc  = rebase --continue
+  ri  = rebase --interactive --autosquash
   rs  = rebase --skip
+  s   = status
   sh  = !git-sh
+  sq  = !sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+  sw  = show
 [core]
   excludesfile = ~/.gitignore
   editor = gvim -f -c 'startinsert'
