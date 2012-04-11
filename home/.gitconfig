@@ -18,6 +18,7 @@
   rc     = rebase --continue
   ra     = rebase --abort
   rs     = rebase --skip
+  sh     = !git-sh
 [core]
   excludesfile = ~/.gitignore
   editor = gvim -f -c 'startinsert'
