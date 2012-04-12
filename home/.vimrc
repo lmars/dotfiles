@@ -45,3 +45,13 @@ let g:ackhighlight=1
 
 " make the checksyntax plugin automatically check ruby syntax after save
 let g:checksyntax={'ruby': {'cmd': 'ruby -c', 'okrx': 'Syntax OK', 'auto': 1}}
+
+" CTRL-X is Cut in Visual mode
+vnoremap <C-X> "+x
+
+" CTRL-C is Copy in Visual mode
+vnoremap <C-C> "+y
+
+" CTRL-V is Paste in Normal & Insert mode
+map <C-V>   "+]p
+imap <C-V>  <ESC>"+]pa
