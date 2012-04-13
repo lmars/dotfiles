@@ -9,3 +9,14 @@ then
   echo
   exit 1
 fi
+
+# Dont allow commits containing trailing whitespace
+
+if test "$(git diff --cached | grep -P '\s+$')"
+then
+  echo "Error: Attempt to commit trailing whitespace"
+  echo
+  echo "To skip this check, add the --no-verify option"
+  echo
+  exit 1
+fi
