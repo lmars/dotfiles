@@ -52,6 +52,5 @@ vnoremap <C-X> "+x
 " CTRL-C is Copy in Visual mode
 vnoremap <C-C> "+y
 
-" CTRL-V is Paste in Normal & Insert mode
-map <C-V>   "+]p
+" CTRL-V is Paste in Insert mode
 imap <C-V>  <ESC>"+]pa
