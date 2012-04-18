@@ -28,3 +28,6 @@
 [submodule "home/.vim/bundle/hammer.vim"]
 	path = home/.vim/bundle/hammer.vim
 	url = git://github.com/matthias-guenther/hammer.vim.git
+[submodule "home/.vim/bundle/gitv"]
+	path = home/.vim/bundle/gitv
+	url = git://github.com/gregsexton/gitv.git
