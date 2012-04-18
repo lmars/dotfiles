@@ -27,4 +27,4 @@
 	url = git://github.com/tpope/vim-fugitive.git
 [submodule "home/.vim/bundle/hammer.vim"]
 	path = home/.vim/bundle/hammer.vim
-	url = git://github.com/robgleeson/hammer.vim.git
+	url = git://github.com/matthias-guenther/hammer.vim.git
