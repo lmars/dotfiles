@@ -42,6 +42,9 @@ map <silent> <leader>l :set lines=40<CR>
 " turn on line numbers with <leader>n
 map <silent> <leader>n :set number<CR>
 
+" write to file with <leader>w
+map <silent> <leader>w :w<CR>
+
 map <CR> o<ESC>
 
 let g:ackhighlight=1
