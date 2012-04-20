@@ -39,6 +39,9 @@ map <silent> <leader>a :b#<CR>
 " set lines=40 with <leader>l
 map <silent> <leader>l :set lines=40<CR>
 
+" turn on line numbers with <leader>n
+map <silent> <leader>n :set number<CR>
+
 map <CR> o<ESC>
 
 let g:ackhighlight=1
