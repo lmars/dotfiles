@@ -12,7 +12,7 @@ fi
 
 # Dont allow commits containing trailing whitespace
 
-if test "$(git diff --cached | grep -P '\s+$')"
+if test "$(git diff --cached | grep -P '\+.*( |\t)$')"
 then
   echo "Error: Attempt to commit trailing whitespace"
   echo
