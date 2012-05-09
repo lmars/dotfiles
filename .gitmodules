@@ -31,3 +31,6 @@
 [submodule "home/.vim/bundle/gitv"]
 	path = home/.vim/bundle/gitv
 	url = git://github.com/gregsexton/gitv.git
+[submodule "home/.rbenv"]
+	path = home/.rbenv
+	url = git://github.com/sstephenson/rbenv.git
