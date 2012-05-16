@@ -43,6 +43,9 @@ map <silent> <leader>n :set number<CR>
 " write to file with <leader>w
 map <silent> <leader>w :w<CR>
 
+" open ctrlp with <leader>p
+map <silent> <leader>p <c-p>
+
 map <CR> o<ESC>
 
 let g:ackhighlight=1

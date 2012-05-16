@@ -31,3 +31,6 @@
 [submodule "home/.rbenv"]
 	path = home/.rbenv
 	url = git://github.com/sstephenson/rbenv.git
+[submodule "home/.vim/bundle/ctrlp.vim"]
+	path = home/.vim/bundle/ctrlp.vim
+	url = git://github.com/kien/ctrlp.vim.git
