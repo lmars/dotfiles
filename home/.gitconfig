@@ -32,7 +32,7 @@
   sw  = show
 [core]
   excludesfile = ~/.gitignore
-  editor = gvim -f -c 'startinsert'
+  editor = vim -f -c 'startinsert'
 [color]
   ui = true
 [dude]
