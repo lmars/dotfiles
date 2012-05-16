@@ -1,7 +1,5 @@
 call pathogen#infect()
 
-let g:CommandTAlwaysShowDotFiles=1
-
 syntax enable
 colors blackboard
 
