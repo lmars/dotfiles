@@ -46,6 +46,9 @@ map <silent> <leader>w :w<CR>
 " open ctrlp with <leader>p
 map <silent> <leader>p <c-p>
 
+" open ctrlp in buffer mode with <leader>b
+map <silent> <leader>b :CtrlPBuffer<CR>
+
 map <CR> o<ESC>
 
 let g:ackhighlight=1
