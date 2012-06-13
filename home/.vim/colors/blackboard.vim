@@ -34,22 +34,38 @@ if has("gui_running")
   highlight clear Search
   highlight Search guibg=#1C3B79
   highlight PreProc guifg=#FF5600
-
-  "HTML Colors
-  highlight link htmlTag Type
-  highlight link htmlEndTag htmlTag
-  highlight link htmlTagName htmlTag
-
-  "Ruby Colors
-  highlight link rubyClass Keyword
-  highlight link rubyDefine Keyword
-  highlight link rubyConstant Type
-  highlight link rubySymbol Constant
-  highlight link rubyStringDelimiter rubyString
-  highlight link rubyInclude Keyword
-  highlight link rubyAttribute Keyword
-  highlight link rubyInstanceVariable Normal
-
-  "Rails Colors
-  highlight link railsMethod Type
+else
+  set t_Co=256
+  highlight Normal ctermfg=15 ctermbg=233
+  highlight LineNr ctermbg=236 ctermfg=245
+  highlight Comment ctermfg=244
+  highlight Constant ctermfg=226
+  highlight Keyword ctermfg=220
+  highlight String ctermfg=40
+  highlight Type ctermfg=110
+  highlight Identifier ctermfg=40
+  highlight Function ctermfg=202
+  highlight PreProc ctermfg=202
+  highlight clear Search
+  highlight Search ctermbg=24
+  highlight Special ctermfg=1
+  highlight rubyInterpolation ctermfg=251
 end
+
+"HTML Colors
+highlight link htmlTag Type
+highlight link htmlEndTag htmlTag
+highlight link htmlTagName htmlTag
+
+"Ruby Colors
+highlight link rubyClass Keyword
+highlight link rubyDefine Keyword
+highlight link rubyConstant Type
+highlight link rubySymbol Constant
+highlight link rubyStringDelimiter rubyString
+highlight link rubyInclude Keyword
+highlight link rubyAttribute Keyword
+highlight link rubyInstanceVariable Normal
+
+"Rails Colors
+highlight link railsMethod Type
