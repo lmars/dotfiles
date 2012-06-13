@@ -12,3 +12,6 @@ fi
 
 # make grep decide when to use color
 alias grep='grep --color=auto'
+
+# Force tmux to assume the terminal supports 256 colours
+alias tmux='tmux -2'
