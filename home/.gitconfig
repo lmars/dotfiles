@@ -20,6 +20,8 @@
   l   = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(yellow)%an%Creset' --all --abbrev-commit --date=relative
   pf  = push --force
   pm  = push origin master
+  pms = push origin master:staging
+  pmp = push origin master:production
   r   = rebase
   ra  = rebase --abort
   rc  = rebase --continue
