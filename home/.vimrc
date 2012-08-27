@@ -49,6 +49,9 @@ map <silent> <leader>p <c-p>
 " open ctrlp in buffer mode with <leader>b
 map <silent> <leader>b :CtrlPBuffer<CR>
 
+" toggle highlighting with <leader>h
+map <silent> <leader>h :set invhlsearch<CR>
+
 map <CR> o<ESC>
 
 let g:ackhighlight=1
