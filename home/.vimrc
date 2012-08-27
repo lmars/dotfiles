@@ -24,7 +24,7 @@ filetype on
 filetype plugin on
 filetype indent on
 
-" \x -> close current buffer
+" close current buffer with <leader>x
 map <silent> <leader>x :bd<CR>
 
 " show whitespace with <leader>s
