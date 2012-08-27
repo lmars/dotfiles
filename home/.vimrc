@@ -38,7 +38,7 @@ map <silent> <leader>a :b#<CR>
 map <silent> <leader>l :set lines=40<CR>
 
 " turn on line numbers with <leader>n
-map <silent> <leader>n :set number<CR>
+map <silent> <leader>n :set invnumber<CR>
 
 " write to file with <leader>w
 map <silent> <leader>w :w<CR>
