@@ -19,6 +19,7 @@ set nobackup       " no backup files
 set nowritebackup  " only in case you don't want a backup file while editing
 set noswapfile     " no swap files
 set hlsearch       " highlight search matches
+set pastetoggle=<F2>
 
 filetype on
 filetype plugin on
