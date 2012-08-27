@@ -5,7 +5,6 @@ colors blackboard
 
 let mapleader=','
 
-set nocompatible
 set smartindent
 set autoindent
 set expandtab
