@@ -54,8 +54,6 @@ map <silent> <leader>b :CtrlPBuffer<CR>
 " toggle highlighting with <leader>h
 map <silent> <leader>h :set invhlsearch<CR>
 
-map <CR> o<ESC>
-
 let g:ackhighlight=1
 
 " make the checksyntax plugin automatically check ruby syntax after save
