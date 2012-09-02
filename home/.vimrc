@@ -54,6 +54,9 @@ map <silent> <leader>b :CtrlPBuffer<CR>
 " toggle highlighting with <leader>h
 map <silent> <leader>h :set invhlsearch<CR>
 
+" type :GitGrep with <leader>g
+map <leader>g :GitGrep<space>
+
 let g:ackhighlight=1
 
 " make the checksyntax plugin automatically check ruby syntax after save
