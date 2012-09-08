@@ -18,3 +18,19 @@ if [ -d "$HOME/bin" ]; then
 fi
 
 export EDITOR=vim
+
+# Set $C / $P to support copy / paste like so:
+#
+#   $ echo date | $C
+#   $ $P
+#   date
+#   $ $($P)
+#   Sat Sep  8 15:49:57 BST 2012
+#
+if which xsel 2>&1 >/dev/null; then
+  export C="xsel --clipboard"
+  export P="xsel --clipboard"
+elif which pbcopy 2>&1 >/dev/null; then
+  export C=pbcopy
+  export P=pbpaste
+fi
