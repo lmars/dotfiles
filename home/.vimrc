@@ -13,7 +13,6 @@ set shiftwidth=2
 set hidden
 set history=1000
 set laststatus=2
-set statusline=PWD:\ \%{getcwd()}\ %t
 set autoread
 set nobackup       " no backup files
 set nowritebackup  " only in case you don't want a backup file while editing
@@ -21,6 +20,7 @@ set noswapfile     " no swap files
 set hlsearch       " highlight search matches
 set pastetoggle=<F2>
 set showcmd
+set encoding=utf-8
 
 filetype on
 filetype plugin on
@@ -61,6 +61,9 @@ let g:ackhighlight=1
 
 " make the checksyntax plugin automatically check ruby syntax after save
 let g:checksyntax={'ruby': {'cmd': 'ruby -c', 'okrx': 'Syntax OK', 'auto': 1}}
+
+" Customise Powerline
+let g:Powerline_stl_path_style = 'short'
 
 " CTRL-X is Cut in Visual mode
 vnoremap <C-X> "+x
