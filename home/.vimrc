@@ -73,3 +73,7 @@ vnoremap <C-C> "+y
 
 " CTRL-V is Paste in Insert mode
 imap <C-V>  <ESC>"+]pa
+
+" Highlight anything past 80 characters in red
+highlight OverLength ctermbg=red ctermfg=white
+match OverLength /\%81v.\+/
