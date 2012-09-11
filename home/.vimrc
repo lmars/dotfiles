@@ -64,6 +64,7 @@ let g:checksyntax={'ruby': {'cmd': 'ruby -c', 'okrx': 'Syntax OK', 'auto': 1}}
 
 " Customise Powerline
 let g:Powerline_stl_path_style = 'short'
+call Pl#Theme#InsertSegment('pwd', 'before', 'fileinfo')
 
 " CTRL-X is Cut in Visual mode
 vnoremap <C-X> "+x
