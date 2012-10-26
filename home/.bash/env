@@ -16,6 +16,9 @@ eval "$(rbenv init -)"
 # Add personal .bin folder to PATH
 PATH="$HOME/.bin:$PATH"
 
+# Put bundle on the path
+PATH="./.bundle/bin:$PATH"
+
 export EDITOR=vim
 
 # Set $C / $P to support copy / paste like so:
