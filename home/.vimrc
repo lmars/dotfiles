@@ -78,3 +78,5 @@ imap <C-V>  <ESC>"+]pa
 " Highlight anything past 80 characters in red
 highlight OverLength ctermbg=red ctermfg=white
 match OverLength /\%81v.\+/
+
+let g:slime_target = "tmux"
