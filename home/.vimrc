@@ -22,6 +22,12 @@ set pastetoggle=<F2>
 set showcmd
 set encoding=utf-8
 
+"folding settings
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1
+
 filetype on
 filetype plugin on
 filetype indent on
