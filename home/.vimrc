@@ -28,6 +28,9 @@ set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 set foldlevel=1
 
+"source .bashrc when using the shell
+set shell=bash\ --login
+
 filetype on
 filetype plugin on
 filetype indent on
