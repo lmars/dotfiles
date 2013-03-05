@@ -49,3 +49,6 @@
 [submodule "home/.vim/bundle/vim-slime"]
 	path = home/.vim/bundle/vim-slime
 	url = git://github.com/jpalardy/vim-slime.git
+[submodule "home/.vim/bundle/YouCompleteMe"]
+	path = home/.vim/bundle/YouCompleteMe
+	url = git://github.com/Valloric/YouCompleteMe.git
