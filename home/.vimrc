@@ -89,3 +89,6 @@ highlight OverLength ctermbg=red ctermfg=white
 match OverLength /\%81v.\+/
 
 let g:slime_target = "tmux"
+
+" Clear the sign column highlight for the gitgutter plugin
+highlight clear SignColumn
