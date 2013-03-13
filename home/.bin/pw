@@ -24,10 +24,12 @@ name, secret = ARGV[0..1]
 def usage
   error <<-USAGE
 
-Usage: #{File.basename $0} [-l] name [secret]
+Usage: #{File.basename $0} [-l] [-g] name [secret]
 
 args:
   -l              List names of all secrets
+  -g              Generate a random secret
+  -g name         Generate a random secret for the name
   name            Get the secret stored with name
   name secret     Set the secret for the name
 USAGE
@@ -46,23 +48,33 @@ def get_all
 end
 
 def set(name, secret)
-  system("gkeyring --set --name #{name} -p type=pw,name=#{name} -w #{secret} >/dev/null")
-end
-
-if name == '-l'
-  puts get_all.join("\n")
-elsif secret
   existing = get(name)
 
   unless existing.empty?
     error "#{name} already exists"
   end
 
-  if set(name, secret)
+  if system("gkeyring --set --name #{name} -p type=pw,name=#{name} -w #{secret} >/dev/null")
     puts 'OK'
   else
     error "Couldn't set #{name}"
   end
+end
+
+if name == '-l'
+  puts get_all.join("\n")
+elsif name == '-g'
+  require 'securerandom'
+  name   = secret
+  secret = SecureRandom.hex
+
+  if name
+    set(name, secret)
+  else
+    puts secret
+  end
+elsif secret
+  set(name, secret)
 else
   secret = get(name)
 
