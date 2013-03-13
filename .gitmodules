@@ -55,3 +55,6 @@
 [submodule "home/.vim/bundle/vim-gitgutter"]
 	path = home/.vim/bundle/vim-gitgutter
 	url = git://github.com/airblade/vim-gitgutter.git
+[submodule "home/.vendor/gkeyring"]
+	path = home/.vendor/gkeyring
+	url = git://github.com/kparal/gkeyring
