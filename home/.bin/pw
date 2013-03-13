@@ -1,0 +1,74 @@
+#!/usr/bin/env ruby
+# A script for storing secrets in the default GNOME keyring
+#
+# Uses the python gkeyring script:
+# https://github.com/kparal/gkeyring
+
+def error(msg)
+  $stderr.puts msg
+  exit 1
+end
+
+unless system('which gkeyring >/dev/null')
+  error <<-ERROR
+
+This script relies on gkeyring.
+
+Download and add it to your PATH:
+https://github.com/kparal/gkeyring
+ERROR
+end
+
+name, secret = ARGV[0..1]
+
+def usage
+  error <<-USAGE
+
+Usage: #{File.basename $0} [-l] name [secret]
+
+args:
+  -l              List names of all secrets
+  name            Get the secret stored with name
+  name secret     Set the secret for the name
+USAGE
+end
+
+unless name
+  usage
+end
+
+def get(name)
+  `gkeyring -p type=pw,name=#{name} -o secret`.strip
+end
+
+def get_all
+  `gkeyring -p type=pw -o name`.split("\n").map(&:strip)
+end
+
+def set(name, secret)
+  system("gkeyring --set --name #{name} -p type=pw,name=#{name} -w #{secret} >/dev/null")
+end
+
+if name == '-l'
+  puts get_all.join("\n")
+elsif secret
+  existing = get(name)
+
+  unless existing.empty?
+    error "#{name} already exists"
+  end
+
+  if set(name, secret)
+    puts 'OK'
+  else
+    error "Couldn't set #{name}"
+  end
+else
+  secret = get(name)
+
+  if secret.empty?
+    error "Couldn't find #{name}"
+  else
+    puts secret
+  end
+end
