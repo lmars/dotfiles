@@ -4,3 +4,4 @@
 .rspec
 .bundle
 tags
+.irbrc
