@@ -1,10 +1,3 @@
-export GIT_PS1_SHOWUPSTREAM="git verbose"
-
-_git_upstream_state() {
-  __git_ps1_show_upstream
-  _git_apply_color "$p" "color.sh.upstream-state" "yellow bold"
-}
-
 export PS1='\n\[\e[01;35m\]\t\[\e[00m\]: `_git_workdir` \[\e[01;33m\](\[\e[00m\]`_git_headname``_git_upstream_state`\[\e[01;33m\])\[\e[00m\] `_git_repo_state`\n\[\e[01;31m\]git\[\e[00m\]: '
 
 alias q='exit'
