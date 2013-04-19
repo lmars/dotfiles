@@ -13,13 +13,13 @@ function colours() {
   local tag=""
 
   for colour in $(seq 30 40) ; do
-      for style in 0 1 4 5 7; do
-          tag="\e[${style};${colour}m"
+    for style in 0 1 4 5 7; do
+      tag="\e[${style};${colour}m"
 
-          echo -ne $tag
-          echo -n "${tag}TEXT${reset}"
-          echo -ne "${reset}  "
-      done
-      echo
+      echo -ne $tag
+      echo -n "${tag}TEXT${reset}"
+      echo -ne "${reset}  "
+    done
+    echo
   done
 }
