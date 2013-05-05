@@ -62,7 +62,7 @@ def set(name, secret)
 end
 
 if name == '-l'
-  puts get_all.join("\n")
+  puts get_all.sort.join("\n")
 elsif name == '-g'
   require 'securerandom'
   name   = secret
