@@ -61,3 +61,6 @@
 [submodule "home/.vim/bundle/vim-signify"]
 	path = home/.vim/bundle/vim-signify
 	url = git://github.com/mhinz/vim-signify.git
+[submodule "home/.vim/bundle/vim-markdown"]
+	path = home/.vim/bundle/vim-markdown
+	url = git://github.com/plasticboy/vim-markdown.git
