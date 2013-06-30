@@ -19,25 +19,28 @@ https://github.com/kparal/gkeyring
 ERROR
 end
 
-name, secret = ARGV[0..1]
+require 'ostruct'
+options = OpenStruct.new
+options.generate = false
+options.list     = false
 
-def usage
-  error <<-USAGE
+require 'optparse'
+opt_parser = OptionParser.new do |o|
+  o.banner = "Usage: pw [options] [name]"
+  o.separator "Options:"
 
-Usage: #{File.basename $0} [-l] [-g] name [secret]
+  o.on('-g', '--generate', 'Generate a random secret') do
+    options.generate = true
+  end
 
-args:
-  -l              List names of all secrets
-  -g              Generate a random secret
-  -g name         Generate a random secret for the name
-  name            Get the secret stored with name
-  name secret     Set the secret for the name
-USAGE
+  o.on('-l', '--list', 'List names of all secrets') do
+    options.list = true
+  end
 end
 
-unless name
-  usage
-end
+opt_parser.parse!
+
+name = ARGV.shift
 
 def get(name)
   `gkeyring -p type=pw,name=#{name} -o secret`.strip
@@ -61,11 +64,13 @@ def set(name, secret)
   end
 end
 
-if name == '-l'
+if options.list
   puts get_all.sort.join("\n")
-elsif name == '-g'
+  exit
+end
+
+if options.generate
   require 'securerandom'
-  name   = secret
   secret = SecureRandom.hex
 
   if name
@@ -73,9 +78,11 @@ elsif name == '-g'
   else
     puts secret
   end
-elsif secret
-  set(name, secret)
-else
+
+  exit
+end
+
+if name
   secret = get(name)
 
   if secret.empty?
@@ -83,4 +90,9 @@ else
   else
     puts secret
   end
+
+  exit
 end
+
+puts opt_parser
+exit 1
