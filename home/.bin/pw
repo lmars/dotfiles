@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-# A script for storing secrets in the default GNOME keyring
+# A script for storing secrets in GNOME keyrings
 #
 # Uses the python gkeyring script:
 # https://github.com/kparal/gkeyring
@@ -19,9 +19,39 @@ https://github.com/kparal/gkeyring
 ERROR
 end
 
+class GnomeKeyring
+  class KeyExists < Exception; end
+  class KeyNotSet < Exception; end
+
+  def initialize(name)
+    @name = name
+  end
+
+  def get(key)
+    `gkeyring -k #{@name} -p type=pw,name=#{key} -o secret`.strip
+  end
+
+  def get_all
+    `gkeyring -k #{@name} -p type=pw -o name`.split("\n").map(&:strip)
+  end
+
+  def set(key, secret)
+    existing = get(key)
+
+    unless existing.empty?
+      raise KeyExists
+    end
+
+    unless system("gkeyring -k #{@name} --set --name #{key} -p type=pw,name=#{key} -w #{secret} >/dev/null")
+      raise KeyNotSet
+    end
+  end
+end
+
 require 'ostruct'
 options = OpenStruct.new
 options.generate = false
+options.keyring  = 'login'
 options.list     = false
 
 require 'optparse'
@@ -33,6 +63,10 @@ opt_parser = OptionParser.new do |o|
     options.generate = true
   end
 
+  o.on('-k', '--keyring KEYRING', 'Use specified KEYRING (defaults to "login")') do |keyring|
+    options.keyring = keyring
+  end
+
   o.on('-l', '--list', 'List names of all secrets') do
     options.list = true
   end
@@ -40,32 +74,11 @@ end
 
 opt_parser.parse!
 
-name = ARGV.shift
-
-def get(name)
-  `gkeyring -p type=pw,name=#{name} -o secret`.strip
-end
-
-def get_all
-  `gkeyring -p type=pw -o name`.split("\n").map(&:strip)
-end
-
-def set(name, secret)
-  existing = get(name)
-
-  unless existing.empty?
-    error "#{name} already exists"
-  end
-
-  if system("gkeyring --set --name #{name} -p type=pw,name=#{name} -w #{secret} >/dev/null")
-    puts 'OK'
-  else
-    error "Couldn't set #{name}"
-  end
-end
+name    = ARGV.shift
+keyring = GnomeKeyring.new(options.keyring)
 
 if options.list
-  puts get_all.sort.join("\n")
+  puts keyring.get_all.sort.join("\n")
   exit
 end
 
@@ -74,7 +87,14 @@ if options.generate
   secret = SecureRandom.hex
 
   if name
-    set(name, secret)
+    begin
+      keyring.set(name, secret)
+      puts 'OK'
+    rescue GnomeKeyring::KeyExists
+      error "#{name} already exists"
+    rescue GnomeKeyring::KeyNotSet
+      error "Couldn't set #{name}"
+    end
   else
     puts secret
   end
@@ -83,7 +103,7 @@ if options.generate
 end
 
 if name
-  secret = get(name)
+  secret = keyring.get(name)
 
   if secret.empty?
     error "Couldn't find #{name}"
