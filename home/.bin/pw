@@ -53,6 +53,7 @@ options = OpenStruct.new
 options.generate = false
 options.keyring  = 'login'
 options.list     = false
+options.secret   = nil
 
 require 'optparse'
 opt_parser = OptionParser.new do |o|
@@ -69,6 +70,10 @@ opt_parser = OptionParser.new do |o|
 
   o.on('-l', '--list', 'List names of all secrets') do
     options.list = true
+  end
+
+  o.on('-s', '--secret SECRET', "Set the secret (if it doesn't exist)") do |secret|
+    options.secret = secret
   end
 end
 
@@ -99,6 +104,11 @@ if options.generate
     puts secret
   end
 
+  exit
+end
+
+if name && options.secret
+  keyring.set(name, options.secret)
   exit
 end
 
