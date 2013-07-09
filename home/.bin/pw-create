@@ -11,15 +11,27 @@ rescue LoadError
   exit 1
 end
 
-require 'securerandom'
-pass = SecureRandom.hex(64)
-
 db_dir  = File.expand_path('../../.db', __FILE__)
 db_name = ARGV.shift
 db_path = "#{db_dir}/#{db_name}.db"
 
 require_gem 'sqlite3'
 db = SQLite3::Database.new db_path
+
+require 'io/console'
+
+$stdout.print "Enter Passphrase: "
+pass = $stdin.noecho(&:gets).strip
+
+$stdout.print "\nConfirm Passphrase: "
+confirm = $stdin.noecho(&:gets).strip
+
+$stdout.print "\n"
+
+if confirm != pass
+  $stderr.puts "Passphrases did not match! Exiting"
+  exit 1
+end
 
 unless system("gkeyring --set --name pw:#{db_name} -p type=pw,name=pw:#{db_name} -w #{pass} >/dev/null")
   $stderr.puts "Failed to save password in the keyring, exiting"
@@ -35,3 +47,5 @@ db.execute <<-SQL
     secret varchar(64)
   );
 SQL
+
+puts %{Successfully created pw database "#{db_name}"}
