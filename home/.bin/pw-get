@@ -1,0 +1,44 @@
+#!/usr/bin/env ruby
+# Get a secret from a pw database
+#
+# Uses the python gkeyring script:
+# https://github.com/kparal/gkeyring
+
+def require_gem(name)
+  require name
+rescue LoadError
+  $stderr.puts "** ERROR ** The #{name} gem is missing"
+  exit 1
+end
+
+db_dir  = File.expand_path('../../.db', __FILE__)
+db_name = ARGV.shift
+db_path = "#{db_dir}/#{db_name}.db"
+
+unless File.exists?(db_path)
+  $stderr.puts %{Unknown pw database "#{db_name}"}
+  exit 1
+end
+
+require_gem 'sqlite3'
+db = SQLite3::Database.new db_path
+
+pass = `gkeyring -p type=pw,name=pw:#{db_name} -o secret`.strip
+
+if pass.empty?
+  # This shouldn't happen
+  $stderr.puts %{Could not get pass for "#{db_name}"}
+  exit 1
+end
+
+db.execute "PRAGMA key = '#{pass}';"
+
+name = ARGV.shift
+secret = db.get_first_value("select secret from secrets where name = ?", name)
+
+if secret.nil?
+  $stderr.puts %{Couldn't find secret in "#{db_name}" db for "#{name}"}
+  exit 1
+end
+
+puts secret
