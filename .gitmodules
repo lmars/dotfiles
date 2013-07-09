@@ -52,9 +52,6 @@
 [submodule "home/.vim/bundle/YouCompleteMe"]
 	path = home/.vim/bundle/YouCompleteMe
 	url = git://github.com/Valloric/YouCompleteMe.git
-[submodule "home/.vendor/gkeyring"]
-	path = home/.vendor/gkeyring
-	url = git://github.com/kparal/gkeyring
 [submodule "home/.vendor/ctags-bundler"]
 	path = home/.vendor/ctags-bundler
 	url = git://github.com/nclark/ctags-bundler.git
