@@ -1,0 +1,37 @@
+#!/usr/bin/env ruby
+# Create a pw compatible database
+#
+# Uses the python gkeyring script:
+# https://github.com/kparal/gkeyring
+
+def require_gem(name)
+  require name
+rescue LoadError
+  $stderr.puts "** ERROR ** The #{name} gem is missing"
+  exit 1
+end
+
+require 'securerandom'
+pass = SecureRandom.hex(64)
+
+db_dir  = File.expand_path('../../.db', __FILE__)
+db_name = ARGV.shift
+db_path = "#{db_dir}/#{db_name}.db"
+
+require_gem 'sqlite3'
+db = SQLite3::Database.new db_path
+
+unless system("gkeyring --set --name pw:#{db_name} -p type=pw,name=pw:#{db_name} -w #{pass} >/dev/null")
+  $stderr.puts "Failed to save password in the keyring, exiting"
+  File.delete(db_path)
+  exit 1
+end
+
+db.execute "PRAGMA key = '#{pass}';"
+
+db.execute <<-SQL
+  create table secrets (
+    name   varchar(64),
+    secret varchar(64)
+  );
+SQL
