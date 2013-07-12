@@ -92,7 +92,13 @@ class PW
 
     file = File.open(key_path, 'w')
 
-    crypto.encrypt secret, :output => file
+    begin
+      crypto.encrypt secret, :output => file
+    rescue Exception => e
+      file.close
+      File.delete(file.path)
+      raise e
+    end
   end
 
   def keys
