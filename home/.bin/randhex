@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+# Print a random hex string
+
+count = 32
+
+require 'optparse'
+OptionParser.new { |opts|
+  opts.on '-n', '--num COUNT', 'Number of characters (must be even)' do |c|
+    if c.to_i.odd?
+      $stderr.puts "ERROR: Count must be even"
+      exit 1
+    end
+
+    count = c.to_i
+  end
+}.parse!(ARGV)
+
+require 'securerandom'
+puts SecureRandom.hex(count / 2)
