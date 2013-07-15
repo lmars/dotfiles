@@ -31,3 +31,11 @@ function prepend_to_path() {
     export PATH="${path}:${PATH}"
   fi
 }
+
+function prepend_to_manpath() {
+  local path=$1
+
+  if [[ ":${MANPATH}:" != *:"${path}":* ]]; then
+    export MANPATH="${path}:${MANPATH}"
+  fi
+}
