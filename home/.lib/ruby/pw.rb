@@ -1,3 +1,4 @@
+require 'io/console'
 require 'fileutils'
 require 'optparse'
 require 'securerandom'
