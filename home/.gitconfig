@@ -35,8 +35,6 @@
   editor = vim -f -c 'startinsert'
 [color]
   ui = true
-[dude]
-	icon = /Users/lewis/Pictures/github.png
 [github]
   user = lmars
 [init]
