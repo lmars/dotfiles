@@ -66,8 +66,6 @@ map <silent> <leader>h :set invhlsearch<CR>
 " type :GitGrep with <leader>g
 map <leader>g :GitGrep<space>
 
-let g:ackhighlight=1
-
 " make the checksyntax plugin automatically check ruby syntax after save
 let g:checksyntax={'ruby': {'cmd': 'ruby -c', 'okrx': 'Syntax OK', 'auto': 1}}
 

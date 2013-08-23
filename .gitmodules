@@ -4,9 +4,6 @@
 [submodule "home/.vim/bundle/sweet-rspec-vim"]
 	path = home/.vim/bundle/sweet-rspec-vim
 	url = git://github.com/duskhacker/sweet-rspec-vim.git
-[submodule "home/.vim/bundle/ack.vim"]
-	path = home/.vim/bundle/ack.vim
-	url = git://github.com/mileszs/ack.vim.git
 [submodule "home/.vim/bundle/checksyntax_vim"]
 	path = home/.vim/bundle/checksyntax_vim
 	url = git://github.com/tomtom/checksyntax_vim.git
