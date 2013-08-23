@@ -7,6 +7,8 @@ require 'gpgme'
 class PW
   class KeyExists < Exception; end
 
+  RECIPIENTS = %w(lewis@lmars.net)
+
   def initialize(argv, db_dir)
     @argv   = argv
     @db_dir = db_dir
@@ -94,7 +96,12 @@ class PW
     file = File.open(key_path, 'w')
 
     begin
-      crypto.encrypt secret, :output => file
+      crypto.encrypt(
+        secret,
+        :always_trust => true,
+        :output       => file,
+        :recipients   => RECIPIENTS
+      )
     rescue Exception => e
       file.close
       File.delete(file.path)
