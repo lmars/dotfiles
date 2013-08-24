@@ -1,0 +1,1 @@
+complete -W "$(grep "^Host" ~/.ssh/config | cut -f 2 -d ' ')" ssh
