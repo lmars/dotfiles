@@ -90,3 +90,6 @@ let g:slime_target = "tmux"
 
 " Clear the sign column highlight for the gitgutter plugin
 highlight clear SignColumn
+
+" Treat Podfiles as Ruby
+au BufRead,BufNewFile Podfile set filetype=ruby
