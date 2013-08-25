@@ -38,7 +38,7 @@ function symlink() {
   fi
 }
 
-say "This script uses apt-get so may prompt for your password"
+say "This script uses sudo so may prompt for your password"
 
 say "Updating apt sources"
 sudo apt-get -y --quiet=2 update
