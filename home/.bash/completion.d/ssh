@@ -1,1 +1,3 @@
-complete -W "$(grep "^Host" ~/.ssh/config | cut -f 2 -d ' ')" ssh
+if [ -f "$HOME/.ssh/config" ]; then
+  complete -W "$(grep "^Host" ~/.ssh/config | cut -f 2 -d ' ')" ssh
+fi
