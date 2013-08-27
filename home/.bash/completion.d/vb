@@ -1,0 +1,1 @@
+complete -W "start status stop" vb

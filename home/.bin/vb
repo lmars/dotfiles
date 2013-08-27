@@ -1,0 +1,55 @@
+#!/bin/bash
+#
+# A script to manage VirtualBoxes
+
+if [ -z $VM_NAME ]; then
+  echo -e "\033[0;31mYou need to set VM_NAME\033[0m"
+  exit 1
+fi
+
+COMMAND=$1
+
+usage() {
+  echo "Usage: vb [start|stop|status]"
+}
+
+running() {
+  VBoxManage list runningvms | grep -q "${VM_NAME}"
+}
+
+start() {
+  VBoxManage startvm "${VM_NAME}" --type headless
+}
+
+stop() {
+  VBoxManage controlvm "${VM_NAME}" poweroff
+}
+
+case $COMMAND in
+  start)
+    if ! running; then
+      start
+    else
+      echo "Already Running!"
+    fi
+    ;;
+  stop)
+    if running; then
+      stop
+    else
+      echo "Not running!"
+    fi
+    ;;
+  status)
+    if running; then
+      echo "Running"
+    else
+      echo "Not running"
+    fi
+    ;;
+  *)
+    usage
+    exit 1
+    ;;
+esac
+
