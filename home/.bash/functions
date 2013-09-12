@@ -39,3 +39,37 @@ function prepend_to_manpath() {
     export MANPATH="${path}:${MANPATH}"
   fi
 }
+
+function print_error() {
+  local msg=$1
+
+  echo -e "\033[0;31m${msg}\033[0m"
+}
+
+# Preview Github markdown styled with Bootstrap
+function md_preview() {
+  local file=$1
+  local css="http://netdna.bootstrapcdn.com/bootswatch/3.0.0/united/bootstrap.min.css"
+
+  if ! which -s marked; then
+    print_error "marked missing; run npm install marked"
+    return 1;
+  fi
+
+  if ! which -s browser; then
+    print_error "browser script missing; run brew install browser"
+    return 2;
+  fi
+
+  if [ -z $file ]; then
+    print_error "Usage: md_preview FILE"
+    return 3;
+  fi
+
+  if [ ! -f $file ]; then
+    print_error "No such file: ${file}"
+    return 4;
+  fi
+
+  echo "<link rel="stylesheet" href="${css}"><div class="container">$(marked -i ${file})</div>" | browser
+}
