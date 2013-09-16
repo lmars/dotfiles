@@ -1,0 +1,31 @@
+_pw_complete() {
+  local cur prev opts dbs dbs_pattern
+
+  COMPREPLY=()
+  cur="${COMP_WORDS[COMP_CWORD]}"
+  prev="${COMP_WORDS[COMP_CWORD-1]}"
+  dbs=$(ls $HOME/.db)
+
+  # an extglob pattern to match in the case statement e.g. @(db_1|db_2|db_3)
+  # see http://mywiki.wooledge.org/glob#extglob
+  dbs_pattern="@($(echo -n $dbs | tr " " "|"))"
+
+  case "${prev}" in
+    $dbs_pattern)
+      # must strip off the .gpg extension
+      opts=$(ls $HOME/.db/$prev | sed "s/\.[^\.]*$//")
+      ;;
+    pw)
+      opts="${dbs}"
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+
+  COMPREPLY=($(compgen -W "${opts}" -- ${cur}))
+  return 0;
+}
+
+shopt -s extglob
+complete -F _pw_complete pw
