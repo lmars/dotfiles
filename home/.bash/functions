@@ -71,5 +71,5 @@ function md_preview() {
     return 4;
   fi
 
-  echo "<link rel="stylesheet" href="${css}"><div class="container">$(marked -i ${file})</div>" | browser
+  echo "<html><head><title>${file}</title><link rel="stylesheet" href="${css}"></head><body><div class="container">$(marked -i ${file})</div></body></html>" | browser
 }
