@@ -52,3 +52,6 @@
 [submodule "home/.vendor/ruby-build"]
 	path = home/.vendor/ruby-build
 	url = https://github.com/sstephenson/ruby-build.git
+[submodule "home/.vendor/tmuxinator"]
+	path = home/.vendor/tmuxinator
+	url = https://github.com/aziz/tmuxinator.git
