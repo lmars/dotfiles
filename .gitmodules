@@ -55,3 +55,6 @@
 [submodule "home/.vendor/tmuxinator"]
 	path = home/.vendor/tmuxinator
 	url = https://github.com/aziz/tmuxinator.git
+[submodule "home/.vim/bundle/vim-go"]
+	path = home/.vim/bundle/vim-go
+	url = https://github.com/fatih/vim-go.git
