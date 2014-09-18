@@ -10,9 +10,6 @@
 [submodule "home/.vim/bundle/tabular"]
 	path = home/.vim/bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
-[submodule "home/.vim/bundle/vim-puppet"]
-	path = home/.vim/bundle/vim-puppet
-	url = git://github.com/rodjek/vim-puppet.git
 [submodule "home/.vim/bundle/vim-fugitive"]
 	path = home/.vim/bundle/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
