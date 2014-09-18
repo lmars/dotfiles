@@ -21,6 +21,7 @@ set hlsearch       " highlight search matches
 set pastetoggle=<F2>
 set showcmd
 set encoding=utf-8
+set number
 
 "folding settings
 set foldmethod=indent   "fold based on indent
