@@ -93,3 +93,9 @@ highlight clear SignColumn
 
 " Treat Podfiles as Ruby
 au BufRead,BufNewFile Podfile set filetype=ruby
+
+" Disable arrow keys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
