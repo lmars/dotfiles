@@ -99,3 +99,6 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+
+" Configure vim-markdown
+let g:vim_markdown_folding_disabled=1
