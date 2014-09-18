@@ -102,3 +102,6 @@ noremap <Right> <NOP>
 
 " Configure vim-markdown
 let g:vim_markdown_folding_disabled=1
+
+" Configure vim-signify
+let g:signify_vcs_list = ['git']
