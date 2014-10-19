@@ -58,3 +58,6 @@
 [submodule "home/.vim/bundle/vim-numbertoggle"]
 	path = home/.vim/bundle/vim-numbertoggle
 	url = https://github.com/jeffkreeftmeijer/vim-numbertoggle.git
+[submodule "home/.vim/bundle/dockerfile.vim"]
+	path = home/.vim/bundle/dockerfile.vim
+	url = https://github.com/honza/dockerfile.vim.git
