@@ -106,3 +106,8 @@ let g:vim_markdown_folding_disabled=1
 
 " Configure vim-signify
 let g:signify_vcs_list = ['git']
+
+" Go syntax highlighting
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
