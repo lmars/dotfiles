@@ -28,6 +28,7 @@
   rc  = rebase --continue
   ri  = rebase --interactive --autosquash
   rs  = rebase --skip
+  rv  = remote -v
   s   = status
   sh  = !git-sh
   sq  = !sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -
