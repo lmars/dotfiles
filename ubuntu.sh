@@ -74,7 +74,7 @@ say "Checking lmars is in authorized_keys"
 if ! grep -q "${LMARS_PUBKEY}" $SSH_KEYS_FILE; then
   say "Adding lmars key to authorized_keys"
   mkdir -p $(dirname $SSH_KEYS_FILE)
-  echo "${LMARS_PUBKEY}" >> $SSH_KEYS_FILE
+  echo "\n${LMARS_PUBKEY}" >> $SSH_KEYS_FILE
 fi
 
 say "Checking for dotfiles repo"
