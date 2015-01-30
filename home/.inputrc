@@ -1,6 +1,14 @@
+# Use Vi, not Emacs, style editing
 set editing-mode vi
 
+# Ignore case
 set completion-ignore-case On
+
+# Show all completions as soon as I press tab, even if there's more than one
 set show-all-if-ambiguous On
+
+# When hitting up/down, cycle through the previous commands which start with
+# the prefix you've entered, rather than just cycling through the last entered
+# commands.
 "\e[A": history-search-backward
 "\e[B": history-search-forward
