@@ -12,3 +12,4 @@ set show-all-if-ambiguous On
 # commands.
 "\e[A": history-search-backward
 "\e[B": history-search-forward
+"\C-l": clear-screen
