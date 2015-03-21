@@ -37,6 +37,12 @@ filetype on
 filetype plugin on
 filetype indent on
 
+" use <C-hjkl> for window navigation
+map <C-h> <C-W>h
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-l> <C-W>l
+
 " close current buffer with <leader>x
 map <silent> <leader>x :bd<CR>
 
