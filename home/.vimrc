@@ -68,6 +68,9 @@ map <silent> <leader>h :set invhlsearch<CR>
 " type :GitGrep with <leader>g
 map <leader>g :GitGrep<space>
 
+" toggle Tagbar with <leader>t
+map <leader>t :TagbarToggle<CR>
+
 " make the checksyntax plugin automatically check ruby syntax after save
 let g:checksyntax={'ruby': {'cmd': 'rbenv exec ruby -c', 'okrx': 'Syntax OK', 'auto': 1}}
 

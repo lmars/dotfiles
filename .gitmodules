@@ -61,3 +61,6 @@
 [submodule "home/.vim/bundle/dockerfile.vim"]
 	path = home/.vim/bundle/dockerfile.vim
 	url = https://github.com/honza/dockerfile.vim.git
+[submodule "home/.vim/bundle/tagbar"]
+	path = home/.vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
