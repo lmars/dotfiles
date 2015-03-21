@@ -22,6 +22,7 @@ set pastetoggle=<F2>
 set showcmd
 set encoding=utf-8
 set number
+set backspace=2
 
 "folding settings
 set foldmethod=indent   "fold based on indent
