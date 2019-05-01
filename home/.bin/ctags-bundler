@@ -1,7 +1,0 @@
-#!/usr/bin/env ruby
-
-$LOAD_PATH.unshift(File.expand_path(__FILE__ + '/../../.vendor/ctags-bundler/lib'))
-
-require 'ctags-bundler'
-
-Ctags::Bundler.generate_tags

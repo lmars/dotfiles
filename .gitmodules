@@ -34,9 +34,6 @@
 [submodule "home/.vim/bundle/YouCompleteMe"]
 	path = home/.vim/bundle/YouCompleteMe
 	url = git://github.com/Valloric/YouCompleteMe.git
-[submodule "home/.vendor/ctags-bundler"]
-	path = home/.vendor/ctags-bundler
-	url = git://github.com/nclark/ctags-bundler.git
 [submodule "home/.vim/bundle/vim-signify"]
 	path = home/.vim/bundle/vim-signify
 	url = git://github.com/mhinz/vim-signify.git
