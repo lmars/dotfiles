@@ -12,8 +12,8 @@
   cp  = cherry-pick
   d   = diff
   dc  = diff --cached
-  f   = fetch
-  fa  = fetch --all
+  f   = fetch --prune
+  fa  = fetch --prune --all
   fx  = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
   g   = grep -n
   hrd = reset --hard
