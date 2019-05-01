@@ -67,3 +67,6 @@
 [submodule "home/.vim/bundle/rust.vim"]
 	path = home/.vim/bundle/rust.vim
 	url = https://github.com/rust-lang/rust.vim.git
+[submodule ".vim/bundle/vim-solidity"]
+	path = home/.vim/bundle/vim-solidity
+	url = https://github.com/tomlion/vim-solidity.git
