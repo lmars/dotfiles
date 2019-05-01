@@ -75,7 +75,10 @@ map <silent> <leader>h :set invhlsearch<CR>
 map <leader>g :GitGrep<space>
 
 " toggle Tagbar with <leader>t
-map <leader>t :TagbarToggle<CR>
+map <silent> <leader>t :TagbarToggle<CR>
+
+" Show tags in preview window with <leader>e
+map <silent> <leader>e :exe "ptjump " . expand("<cword>")<CR>
 
 " make the checksyntax plugin automatically check ruby syntax after save
 let g:checksyntax={'ruby': {'cmd': 'ruby -c', 'okrx': 'Syntax OK', 'auto': 1}}
@@ -125,3 +128,10 @@ let g:go_fmt_command = "goimports"
 
 " treat all shell files as bash
 let g:is_bash=1
+
+" Use gotags to generate tags for Go files
+autocmd FileType go let b:easytags_cmd = 'gotags'
+
+autocmd BufNewFile,BufReadPre *.json.erb let b:eruby_subtype = 'javascript'
+
+autocmd BufNewFile,BufRead *.sol set softtabstop=4 shiftwidth=4 expandtab
