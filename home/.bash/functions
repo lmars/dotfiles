@@ -71,5 +71,31 @@ function md_preview() {
     return 4;
   fi
 
-  echo "<html><head><title>${file}</title><link rel="stylesheet" href="${css}"></head><body><div class="container">$(marked -i ${file})</div></body></html>" | browser
+  echo "<html><head><title>${file}</title><link rel="stylesheet" href="${css}"></head><body><div class="container">$(md_render "${file}")</div></body></html>" | browser
+}
+
+function md_render() {
+  local file=$1
+  local code=false
+  local graph=""
+
+  while IFS=null read line; do
+    if [[ "${line}" = '```dot' ]]; then
+      code=true
+      continue
+    fi
+
+    if [[ "${line}" = '```' ]] && $code; then
+      echo "<div>$(dot -Tsvg /dev/stdin <<< "${graph}" | tr '\n' ' ' | sed 's/<?xml[^>]\+> <[^>]\+>//g')</div>"
+      graph=""
+      code=false
+      continue
+    fi
+
+    if $code; then
+      graph="$(echo -e "${graph}\n${line}")"
+    else
+      echo "${line}"
+    fi
+  done < "${file}" | marked
 }
