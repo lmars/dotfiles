@@ -78,7 +78,7 @@ map <leader>g :GitGrep<space>
 map <leader>t :TagbarToggle<CR>
 
 " make the checksyntax plugin automatically check ruby syntax after save
-let g:checksyntax={'ruby': {'cmd': 'rbenv exec ruby -c', 'okrx': 'Syntax OK', 'auto': 1}}
+let g:checksyntax={'ruby': {'cmd': 'ruby -c', 'okrx': 'Syntax OK', 'auto': 1}}
 
 " Customise Powerline
 let g:Powerline_stl_path_style = 'short'
